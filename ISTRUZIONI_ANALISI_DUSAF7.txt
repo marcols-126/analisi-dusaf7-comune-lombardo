@@ -1,0 +1,149 @@
+Lo script Python è fornito nella cartella del progetto come file:
+analisi_dusaf7_comune_lombardo.py
+
+Per usarlo in QGIS, installarlo nel Toolbox da:
+Processing > Toolbox > Scripts > Aggiungi script al toolbox
+
+La copia nella cartella del progetto serve come file sorgente e per la condivisione del pacchetto.
+
+
+
+
+ISTRUZIONI SEMPLICI - ANALISI DUSAF 7 PER COMUNE LOMBARDO
+===========================================================
+
+1. APRIRE QGIS
+Aprire QGIS Desktop.
+
+2. APRIRE O SALVARE IL PROGETTO
+Aprire il progetto QGIS fornito oppure creare un nuovo progetto e salvarlo nella cartella principale del lavoro.
+
+Esempio:
+cartella_progetto/
+  progetto.qgz
+  stili/
+  DUSAF7/
+  Limiti01012026/
+
+3. SCARICARE I DATI NECESSARI
+
+Confini amministrativi ISTAT 2026:
+https://www.istat.it/notizia/confini-delle-unita-amministrative-a-fini-statistici-al-1-gennaio-2018-2/
+
+DUSAF 7 - Regione Lombardia:
+https://www.geoportale.regione.lombardia.it/download-pacchetti?p_p_id=dwnpackageportlet_WAR_gptdownloadportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_dwnpackageportlet_WAR_gptdownloadportlet_metadataid=r_lombar%3A7cd05e9f-b693-4d7e-a8de-71b40b45f54e&_jsfBridgeRedirect=true
+
+4. ESTRARRE I FILE
+Estrarre tutto il contenuto dei pacchetti scaricati nella cartella del progetto.
+
+5. CARICARE I LAYER IN QGIS
+Caricare nel progetto QGIS solo questi due layer obbligatori:
+
+- DUSAF7
+- Com01012026_WGS84
+
+Se nel pannello Layer hanno nomi diversi, rinominarli esattamente così:
+
+DUSAF7
+Com01012026_WGS84
+
+6. CONTROLLARE LA CARTELLA STILI
+Nella cartella del progetto deve essere presente, se disponibile, la cartella:
+
+stili/
+
+con i seguenti file:
+
+- DUSAF7.qml
+- DUSAF7 - clip QC.qml
+- Confine.qml
+- QC slivers DUSAF7.qml
+
+Se la cartella stili manca, lo script funziona comunque ma i layer saranno caricati senza simbologia personalizzata.
+
+7. INSTALLARE LO SCRIPT NEL TOOLBOX
+In QGIS aprire:
+
+Processing > Toolbox
+
+Poi usare:
+
+Scripts > Crea nuovo script
+
+oppure:
+
+Scripts > Aggiungi script al toolbox
+
+Caricare o incollare lo script Python:
+
+analisi_dusaf7_comune_lombardo.py
+
+8. ESEGUIRE LO STRUMENTO
+Nel Toolbox aprire:
+
+Analisi Territoriale > Analisi DUSAF 7 - Comune Lombardo
+
+Alla prima finestra di avviso, leggere i prerequisiti e premere:
+
+OK, prosegui
+
+9. INSERIRE IL COMUNE
+Digitare il nome del Comune da analizzare.
+
+Il Comune deve essere selezionato tra quelli suggeriti dall'autocompletamento.
+Lo strumento non parte se il nome del Comune non è valido.
+
+Esempio:
+Tromello
+
+10. IMPOSTARE GLI SLIVERS
+Lasciare il valore predefinito:
+
+1.0 m²
+
+salvo diversa indicazione tecnica.
+
+11. AVVIARE L'ELABORAZIONE
+Premere Esegui.
+
+Lo script esegue automaticamente:
+
+- verifica layer
+- fix geometries
+- riproiezione in EPSG:32632
+- estrazione del Comune
+- clip DUSAF
+- controllo slivers
+- calcolo superfici in m², ha e %
+- esportazione GeoPackage e CSV
+
+12. OUTPUT PRODOTTI
+Lo script crea automaticamente una cartella:
+
+output_dusaf7_nome_comune/
+
+con:
+
+- GeoPackage finale
+- CSV riepilogo superfici
+
+In QGIS vengono caricati automaticamente i layer finali:
+
+- DUSAF7 nome_comune - superfici ha %
+- DUSAF7 nome_comune - clip QC
+- Confine nome_comune fix
+- QC slivers DUSAF7 nome_comune
+
+13. NOTE IMPORTANTI
+Non modificare i campi DUSAF richiesti dallo script:
+
+- COD_TOT
+- DESCR
+
+Il progetto QGIS deve essere salvato prima di eseguire lo strumento.
+
+Se lo script segnala un errore, leggere il messaggio nel log di Processing e verificare:
+- che DUSAF7 sia caricato
+- che Com01012026_WGS84 sia caricato
+- che il Comune sia stato scelto tra i valori suggeriti
+- che il progetto QGIS sia salvato
