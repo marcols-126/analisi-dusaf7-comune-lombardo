@@ -1,0 +1,14 @@
+Gli stili QML presenti in questa cartella sono stati predisposti per rappresentare il dataset DUSAF 7.0.
+
+La simbologia DUSAF riprende/adatta la classificazione e la rappresentazione associate al dataset DUSAF di Regione Lombardia.
+
+Fonte:
+Regione Lombardia - Geoportale della Lombardia
+DUSAF 7.0 - Uso e copertura del suolo
+
+Attribuzione:
+Fonte: Regione Lombardia - Geoportale della Lombardia, DUSAF 7.0.
+Elaborazione e adattamento QGIS: Marco Stefano La Sala.
+
+Il codice Python del repository è distribuito con licenza AGPL-3.0.
+Gli stili QML derivati o adattati da materiali regionali devono mantenere l'attribuzione alla fonte originaria.
