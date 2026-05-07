@@ -192,6 +192,20 @@ Lo script è stato sviluppato per garantire un flusso ripetibile e controllabile
 
 Il controllo sugli slivers segnala le geometrie residue inferiori o uguali alla soglia impostata dall'utente, default `1.0 m²`, senza rimuoverle automaticamente dal calcolo. Questo consente di mantenere tracciabilità completa del dato e di valutare manualmente eventuali anomalie.
 
+## Attribuzione dati e stili
+
+Il codice Python del repository è distribuito con licenza GNU Affero General Public License v3.0 (AGPL-3.0).
+
+Gli stili QML presenti nella cartella `stili/`, in particolare quelli relativi alla classificazione DUSAF, sono stati predisposti per rappresentare le classi del dataset DUSAF 7.0 e derivano/riprendono la simbologia associata ai dati di Regione Lombardia.
+
+Fonte dati e simbologia di riferimento:
+- Regione Lombardia - Geoportale della Lombardia
+- Dataset DUSAF 7.0 - Uso e copertura del suolo
+- Licenza dei dati/simbologie regionali: verificare i metadati ufficiali del dataset sul Geoportale; ove applicabile, riuso secondo CC-BY 4.0 con attribuzione della fonte.
+
+Attribuzione consigliata:
+"Fonte: Regione Lombardia - Geoportale della Lombardia, DUSAF 7.0. Elaborazione e adattamento QGIS a cura di Marco Stefano La Sala."
+
 ## Licenza
 
 Distribuito con licenza GNU Affero General Public License v3.0 (AGPL-3.0) - vedi LICENSE.
