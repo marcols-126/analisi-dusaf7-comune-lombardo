@@ -54,7 +54,9 @@ Se la differenza supera la tolleranza configurata (`AUDIT_TOLERANCE_M2 = 1.0`) i
 
 ## Licenza
 
-Distribuito con licenza MIT - vedi [LICENSE](LICENSE).
+Distribuito con licenza **GNU General Public License v3.0** - vedi [LICENSE](LICENSE).
+
+Questa licenza è coerente con l'ecosistema QGIS (anch'esso rilasciato sotto GPL): chiunque modifichi o ridistribuisca questo strumento è tenuto a mantenere il codice sorgente aperto sotto la stessa licenza.
 
 ## Autore
 
