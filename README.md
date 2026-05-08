@@ -95,7 +95,7 @@ pct_dusaf
 pct_comune
 ```
 
-Il GeoPackage contiene i layer principali del workflow:
+Il GeoPackage contiene i layer principali del Flusso di Lavoro:
 
 ```text
 dusaf7_<comune>_superfici
@@ -142,7 +142,7 @@ Se la differenza supera la tolleranza configurata, il flusso emette un `[DATA AU
 
 La somma `pct_dusaf` deve essere coerente con `100,00 %` entro tolleranza `0,0001 %`.
 
-## Workflow sintetico
+## Flusso di Lavoro sintetico
 
 ```text
 Caricamento layer nel progetto QGIS
